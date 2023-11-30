@@ -1,0 +1,31 @@
+<% layout("./layouts/layout.eta") %>
+<div class="uk-container">
+    <div class="uk-container">
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-align-center uk-margin-top">
+        <h1 class="uk-heading-large">Login</h1>
+        <form method="POST" action="/auth/login">
+                <div class="uk-margin">
+                    <input class="uk-input" type="email" placeholder="Email" name="email" value = <%= it.email %>>
+                </div>
+                <div class="uk-margin">
+                    <input class="uk-input" type="password" placeholder="Password" name="password">
+                </div>
+
+                <div class="uk-margin">
+                    <button class="uk-button uk-button-primary uk-width-1-1" type="submit">Login</button>
+                </div>
+                <% if (it.errors) { %>
+                    <% Object.keys(it.errors).forEach((attribute) => { %>
+                        <% Object.values(it.errors[attribute]).forEach((err) => { %>
+                                <div uk-alert class="uk-alert-warning">
+                                    <a href class="uk-alert-close" uk-close></a>
+                                    <%= err %>
+                                </div>
+                        <% }); %>
+                    <% }); %>
+                <% } %>
+            </form>
+        </div>
+    </div>
+</div>
+

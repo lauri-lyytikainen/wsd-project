@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= it.title %></title>
+    <meta charset="utf-8">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit-icons.min.js"></script>
+  </head>
+  <body>
+    <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-center">
+        <ul class="uk-navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/topics">Topics</a></li>
+            <li><a href="">Quiz</a></li>
+        </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <div class="uk-container">
+            <ul class="uk-navbar-nav">
+                
+                <% if (it.user) { %>
+                    <li> <a href="/"><%= it.user.email %> </a> </li>
+                    <li> <a href="/auth/logout">Logout</a> </li>
+                <% } else { %>
+                  <li><a href="/auth/login">Login</a></li>
+                  <li><a href="/auth/register">Register</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+  </nav>
+    <%~ it.body %>
+  </body>
+</html>
