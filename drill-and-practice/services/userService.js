@@ -34,7 +34,7 @@ const tryToLogin = async (data) => {
     `;
 
     if (existingUsers.length === 0) {
-        return false;
+        return {success: false, admin: false};
     }
 
     const user = existingUsers[0];
@@ -44,10 +44,10 @@ const tryToLogin = async (data) => {
     const passwordCorrect = await bcrypt.compare(data.password, hash);
 
     if (!passwordCorrect) {
-        return false;
+        return {success: false, admin: false};
     }
 
-    return true;
+    return {success: true, admin: user.admin};
 };
 
 

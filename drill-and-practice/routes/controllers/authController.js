@@ -52,10 +52,10 @@ const postLoginForm = async ({ request, state, render, response }) => {
     password: password
   }
 
-  const loginSuccessful = await userService.tryToLogin(data);
-  if (loginSuccessful) {
+  const loginAttempt = await userService.tryToLogin(data);
+  if (loginAttempt.success) {
     await state.session.set("authenticated", true);
-    await state.session.set("user", { email: email });
+    await state.session.set("user", { email: email, admin: loginAttempt.admin });
     response.redirect("/");
   } else {
     render("login.eta", { title: "Drill and Practice Login", errors: { account: { account: "The email or password is incorrect" } }, email: email });
