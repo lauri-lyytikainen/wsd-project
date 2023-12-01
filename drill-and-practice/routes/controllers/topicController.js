@@ -27,9 +27,8 @@ const postNewTopic = async ({ request, state, response, render }) => {
   const params = await body.value;
   const name = params.get("name");
 
-
   // Add the new topic to the database
-  const databaseResponse = await addNewTopic(name);
+  const databaseResponse = await addNewTopic(name, user.id);
   if (databaseResponse.success) {
     response.redirect("/topics");
     return;

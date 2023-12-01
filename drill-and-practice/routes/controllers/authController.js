@@ -2,7 +2,7 @@ import { validasaur } from "../../deps.js";
 import * as userService from "../../services/userService.js";
 
 const showLoginForm = ({ render }) => {
-    render("login.eta", { title: "Drill and Practice Login", errors: [], email: ""  });
+    render("login.eta", { title: "Drill and Practice Login", errors: [], email: "" });
 };
 
 const showRegistrationForm = ({ render }) => {
@@ -55,7 +55,7 @@ const postLoginForm = async ({ request, state, render, response }) => {
   const loginAttempt = await userService.tryToLogin(data);
   if (loginAttempt.success) {
     await state.session.set("authenticated", true);
-    await state.session.set("user", { email: email, admin: loginAttempt.admin });
+    await state.session.set("user", { email: email, admin: loginAttempt.admin, id: loginAttempt.id });
     response.redirect("/");
   } else {
     render("login.eta", { title: "Drill and Practice Login", errors: { account: { account: "The email or password is incorrect" } }, email: email });

@@ -8,7 +8,7 @@ const getTopics = async () => {
     return res;
 }
 
-const addNewTopic = async (name) => {
+const addNewTopic = async (name, userId) => {
 
     const validationRules = {
         name: [validasaur.required, validasaur.minLength(1)],
@@ -30,12 +30,29 @@ const addNewTopic = async (name) => {
 
     // Add the new topic to the database
     await sql`
-        INSERT INTO topics (name) VALUES (${name})
+        INSERT INTO topics (name, user_id) VALUES (${name}, ${userId})
     `;
     return { success: true };
 };
 
 const deleteTopic = async (id) => {
+ 
+    // Delete the answers with the topic id
+    await sql`
+        DELETE FROM question_answers WHERE question_id IN (SELECT id FROM questions WHERE topic_id = ${id})
+    `;
+
+    // Delete the answer options with the topic id  
+    await sql`
+        DELETE FROM question_answer_options WHERE question_id IN (SELECT id FROM questions WHERE topic_id = ${id})
+    `;
+
+    // Delete the questions with the topic id
+    await sql`
+        DELETE FROM questions WHERE topic_id = ${id}
+    `;
+
+    // Delete the topic with the id
     await sql`
         DELETE FROM topics WHERE id = ${id}
     `;

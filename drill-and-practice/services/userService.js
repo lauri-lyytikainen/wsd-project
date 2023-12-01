@@ -47,7 +47,7 @@ const tryToLogin = async (data) => {
         return {success: false, admin: false};
     }
 
-    return {success: true, admin: user.admin};
+    return {success: true, admin: user.admin, id: user.id};
 };
 
 
