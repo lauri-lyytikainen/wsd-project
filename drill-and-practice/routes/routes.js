@@ -12,5 +12,6 @@ router.get("/auth/register", authController.showRegistrationForm);
 router.post("/auth/register", authController.postRegistrationForm);
 router.get("/auth/logout", authController.logout);
 router.get("/topics", topicController.showTopics);
+router.post("/topics", topicController.postNewTopic);
 
 export { router };
