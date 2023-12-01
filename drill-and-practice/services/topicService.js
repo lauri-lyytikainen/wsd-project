@@ -35,4 +35,10 @@ const addNewTopic = async (name) => {
     return { success: true };
 };
 
-export { getTopics, addNewTopic };
+const deleteTopic = async (id) => {
+    await sql`
+        DELETE FROM topics WHERE id = ${id}
+    `;
+}
+
+export { getTopics, addNewTopic, deleteTopic };

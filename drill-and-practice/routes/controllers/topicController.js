@@ -1,4 +1,4 @@
-import { getTopics, addNewTopic } from "../../services/topicService.js";
+import { getTopics, addNewTopic, deleteTopic} from "../../services/topicService.js";
 
 const showTopics = async ({ render, state }) => {
 
@@ -20,6 +20,7 @@ const postNewTopic = async ({ request, state, response, render }) => {
   const user = await state.session.get("user");
   if (!user || !user.admin) {
     response.redirect("/topics");
+    return;
   }
 
   const body = request.body({ type: "form"});
@@ -31,7 +32,9 @@ const postNewTopic = async ({ request, state, response, render }) => {
   const databaseResponse = await addNewTopic(name);
   if (databaseResponse.success) {
     response.redirect("/topics");
+    return;
   } else {
+    // Database call failed, show the form again with an error message
     const data = {
       topics: await getTopics(),
       title: "Topics",
@@ -40,9 +43,27 @@ const postNewTopic = async ({ request, state, response, render }) => {
       isAdmin: user.admin
     };
     render("topics.eta", data);
+    return;
   }
-
 };
 
-export { showTopics, postNewTopic };
+const removeTopic = async ({ request, state, response }) => {
+  // Check that the user is an admin
+  const user = await state.session.get("user");
+  if (!user || !user.admin) {
+    response.redirect("/topics");
+    return;
+  }
+
+  // Get the topic id from the request address
+
+  const id = request.url.pathname.split("/")[2];
+
+  // Delete the topic from the database
+  await deleteTopic(id);
+  response.redirect("/topics");
+  return;
+};
+
+export { showTopics, postNewTopic, removeTopic };
   

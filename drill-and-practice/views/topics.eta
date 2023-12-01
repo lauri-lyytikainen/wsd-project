@@ -37,7 +37,20 @@
         <ul class="uk-list uk-list-striped">
             <% it.topics.forEach((topic) => { %>
                 <li>
-                    <a href="/topics/<%= topic.id %>"><%= topic.name %></a>
+                    <div class="uk-container uk-flex">
+                        <div class="uk-flex-1">
+                            <a href="/topics/<%= topic.id %>"><%= topic.name %></a>
+                        </div>
+                        <% if(it.isAdmin) { %>
+                            <div class="">
+                                <form method="POST" action="/topics/<%= topic.id %>/delete">
+                                    <div class="">
+                                        <button class="uk-button uk-button-danger uk-width-1-1" type="submit">Delete</button>
+                                    </div>
+                                </form>
+                            </div>
+                        <% } %>
+                    </div>
                 </li>
             <% }); %>
         </ul>

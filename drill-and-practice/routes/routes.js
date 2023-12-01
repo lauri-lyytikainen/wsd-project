@@ -13,5 +13,6 @@ router.post("/auth/register", authController.postRegistrationForm);
 router.get("/auth/logout", authController.logout);
 router.get("/topics", topicController.showTopics);
 router.post("/topics", topicController.postNewTopic);
+router.post("/topics/:id/delete", topicController.removeTopic);
 
 export { router };

@@ -23,7 +23,7 @@
             <ul class="uk-navbar-nav">
                 
                 <% if (it.user) { %>
-                    <li> <a href="/"><%= it.user.email %> </a> </li>
+                    <li> <a href=""><%= it.user.email %> </a> </li>
                     <li> <a href="/auth/logout">Logout</a> </li>
                 <% } else { %>
                   <li><a href="/auth/login">Login</a></li>
