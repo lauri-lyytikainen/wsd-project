@@ -1,0 +1,44 @@
+<% layout("./layouts/layout.eta") %>
+<div class="uk-container">
+    <h1 class="uk-heading-large"><%= it.title %></h1>
+    <div class="uk-container">
+        <div class="uk-card uk-card-default uk-card-body">
+            <div class="uk-card-header">
+                <h3 class="uk-card-title">Add more questions</h3>
+            </div>
+            <div class="uk-card-body">
+                <p>Add a new question</p>
+                <form method="POST" action="/topics/<%= it.topicId %>/questions">
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Name" name="question_text" value = <%= it.question %>>
+                    </div>
+                    <div class="uk-margin">
+                        <button class="uk-button uk-button-primary uk-width-1-1" type="submit">Add</button>
+                    </div>
+                </form>
+               
+            </div>
+             <% if (it.errors) { %>
+                <% Object.keys(it.errors).forEach((attribute) => { %>
+                    <% Object.values(it.errors[attribute]).forEach((err) => { %>
+                            <div uk-alert class="uk-alert-warning">
+                                <a href class="uk-alert-close" uk-close></a>
+                                <%= err %>
+                            </div>
+                    <% }); %>
+                <% }); %>
+            <% } %>
+        </div>
+
+        <ul class="uk-list uk-list-striped">
+            <% if (it.questions) { %>
+                <% it.questions.forEach((question) => { %>
+                    <li>
+                        <a href=""><%= question.question_text %></a>
+                    </li>
+                <% }); %>
+            <% } %>
+        </ul>
+
+    </div>
+</div>

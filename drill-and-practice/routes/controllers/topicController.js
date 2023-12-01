@@ -1,4 +1,5 @@
-import { getTopics, addNewTopic, deleteTopic} from "../../services/topicService.js";
+import { getTopics, getTopic, addNewTopic, deleteTopic } from "../../services/topicService.js";
+import { getAllQuestions } from "../../services/questionService.js";
 
 const showTopics = async ({ render, state }) => {
 
@@ -64,5 +65,32 @@ const removeTopic = async ({ request, state, response }) => {
   return;
 };
 
-export { showTopics, postNewTopic, removeTopic };
+const showTopic = async ({ render, request, state, response }) => {
+  const user = await state.session.get("user");
+  if (!user) {
+    response.redirect("/topics");
+    return;
+  }
+
+  const id = request.url.pathname.split("/")[2];
+
+  const topic = await getTopic(id);
+
+  const questions = await getAllQuestions(id);
+
+  const data = {
+    title: topic.name,
+    topicId: topic.id,
+    question: "",
+    questions: questions,
+    errors: null,
+  };
+
+  render("topic.eta", data);
+
+};
+
+
+
+export { showTopics, showTopic, postNewTopic, removeTopic };
   

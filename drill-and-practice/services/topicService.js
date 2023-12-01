@@ -8,6 +8,13 @@ const getTopics = async () => {
     return res;
 }
 
+const getTopic = async (id) => {
+    const res = await sql`
+        SELECT * FROM topics WHERE id = ${id}
+    `;
+    return res[0];
+};
+
 const addNewTopic = async (name, userId) => {
 
     const validationRules = {
@@ -58,4 +65,6 @@ const deleteTopic = async (id) => {
     `;
 }
 
-export { getTopics, addNewTopic, deleteTopic };
+
+
+export { getTopics, getTopic, addNewTopic, deleteTopic };
