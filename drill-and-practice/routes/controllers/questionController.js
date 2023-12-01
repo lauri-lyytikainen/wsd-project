@@ -1,4 +1,4 @@
-import { addQuestion, getAllQuestions } from "../../services/questionService.js";
+import { addQuestion, getAllQuestions, getQuestion } from "../../services/questionService.js";
 import { getTopic } from "../../services/topicService.js";
 
 const postNewQuestion = async ({ request, state, response, render }) => {
@@ -36,4 +36,23 @@ const postNewQuestion = async ({ request, state, response, render }) => {
     }
 };
 
-export { postNewQuestion }
+const showQuestion = async ({ render, request, response, state }) => {
+    const user = await state.session.get("user");
+    if (!user) {
+      response.redirect("/topics");
+      return;
+    }
+  
+    const qId = request.url.pathname.split("/")[4];
+    const question = await getQuestion(qId);
+  
+    const data = {
+      title: question.question_text,
+      question: question,
+      errors: [],
+    };
+  
+    render("question.eta", data);
+}
+
+export { postNewQuestion, showQuestion }

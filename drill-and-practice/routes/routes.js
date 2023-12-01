@@ -17,5 +17,6 @@ router.post("/topics", topicController.postNewTopic);
 router.get("/topics/:id", topicController.showTopic);
 router.post("/topics/:id/delete", topicController.removeTopic);
 router.post("/topics/:id/questions", questionController.postNewQuestion);
+router.get("/topics/:id/questions/:qId", questionController.showQuestion);
 
 export { router };

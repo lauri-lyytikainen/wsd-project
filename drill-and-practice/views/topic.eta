@@ -34,7 +34,7 @@
             <% if (it.questions) { %>
                 <% it.questions.forEach((question) => { %>
                     <li>
-                        <a href=""><%= question.question_text %></a>
+                        <a href="/topics/<%= it.topicId %>/questions/<%= question.id%>"><%= question.question_text %></a>
                     </li>
                 <% }); %>
             <% } %>

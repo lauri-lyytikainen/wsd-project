@@ -1,0 +1,7 @@
+<% layout("./layouts/layout.eta") %>
+<div class="uk-container">
+    <h1 class="uk-heading-large"><%= it.title %></h1>
+    <div class="uk-container">
+      
+    </div>
+</div>

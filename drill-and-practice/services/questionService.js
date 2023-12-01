@@ -25,4 +25,11 @@ const getAllQuestions = async (topicId) => {
     return res;
 };
 
-export { addQuestion, getAllQuestions }
+const getQuestion = async (questionId) => {
+    const res = await sql`
+        SELECT * FROM questions WHERE id = ${questionId}
+    `;
+    return res[0];
+};
+
+export { addQuestion, getAllQuestions, getQuestion }
