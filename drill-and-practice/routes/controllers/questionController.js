@@ -1,5 +1,6 @@
 import { addQuestion, getAllQuestions, getQuestion } from "../../services/questionService.js";
 import { getTopic } from "../../services/topicService.js";
+import { getAllOptions } from "../../services/optionService.js";
 
 const postNewQuestion = async ({ request, state, response, render }) => {
     const user = await state.session.get("user");
@@ -22,7 +23,7 @@ const postNewQuestion = async ({ request, state, response, render }) => {
   
     if (!databaseResponse.success) {
         const data = {
-            title: topic.name,
+            title: question,
             topicId: id,
             question: question,
             questions: questions,
@@ -46,10 +47,16 @@ const showQuestion = async ({ render, request, response, state }) => {
     const qId = request.url.pathname.split("/")[4];
     const question = await getQuestion(qId);
   
+    const options = await getAllOptions(qId);
+
     const data = {
       title: question.question_text,
       question: question,
       errors: [],
+      topicId: question.topic_id,
+      questionId: question.id,
+      isCorrect: false,
+      options: options,
     };
   
     render("question.eta", data);
