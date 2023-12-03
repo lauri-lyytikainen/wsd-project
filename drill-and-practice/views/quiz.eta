@@ -1,0 +1,17 @@
+<% layout("./layouts/layout.eta") %>
+<div class="uk-container">
+    <h1 class="uk-heading-large">Choose topic</h1>
+    <div class="uk-container">
+        <ul class="uk-list uk-list-striped">
+            <% it.topics.forEach((topic) => { %>
+                <li>
+                    <div class="uk-container uk-flex">
+                        <div class="uk-flex-1">
+                            <a href="/quiz/<%= topic.id %>"><%= topic.name %></a>
+                        </div>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</div>

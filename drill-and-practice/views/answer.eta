@@ -1,0 +1,13 @@
+<% layout("./layouts/layout.eta") %>
+<div class="uk-container">
+    <h1 class="uk-heading-large"><%= it.title %></h1>
+    <div class="uk-container">
+        <% if(it.answerWasTrue) { %>
+            <p>Correct!</p>
+        <% } else { %>
+            <p>Incorrect!</p>
+            <p>The correct answer was <%= it.correctAnswer %></p>
+        <% } %>
+        <a href="/quiz/<%= it.topicId %>" class="uk-button uk-button-primary">Next Question</a>
+    </div>
+</div>

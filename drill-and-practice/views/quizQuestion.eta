@@ -1,0 +1,33 @@
+<% layout("./layouts/layout.eta") %>
+<div class="uk-container">
+    <h1 class="uk-heading-large">Question</h1>
+    <div class="uk-container">
+        <% if (it.question) { %>
+            <div class="uk-card uk-card-default">
+                <div class="uk-card-header">
+                    <h3 class="uk-card-title"><%= it.question.question_text %></h3>
+                </div>
+                <div class="uk-card-body uk-flex uk-flex-column">
+                    <% it.answerOptions.forEach((option) => { %>
+                        <div class="uk-card uk-card-default uk-card-body uk-margin">
+                            <div class="uk-container uk-flex">
+                                <div class="uk-width-1">
+                                    <%= option.option_text %>
+                                </div>
+                                <div>
+                                    <form method="POST" action="/quiz/<%= it.topicId %>/questions/<%= it.questionId %>/options/<%= option.id %>">
+                                    <div class="">
+                                        <button class="uk-button uk-button-primary uk-width-1-1" type="submit">Choose</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    <% });%>
+                </div>
+            </div>
+        <% } else { %>
+            There are no questions on this topic yet.
+        <% } %>
+    </div>
+</div>

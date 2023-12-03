@@ -31,30 +31,34 @@
                 <% }); %>
             <% } %>
         </div>
-
-         <ul class="uk-list uk-list-striped">
-            <% it.options.forEach((option) => { %>
-                <li>
-                    <div class="uk-container uk-flex">
-                        <div class="uk-flex-1">
-                            <p><%= option.option_text %></p>
+        <% if (it.options.length > 0) { %>
+            <ul class="uk-list uk-list-striped">
+                <% it.options.forEach((option) => { %>
+                    <li>
+                        <div class="uk-container uk-flex">
+                            <div class="uk-flex-1">
+                                <p><%= option.option_text %></p>
+                            </div>
+                            <div class="uk-margin-right">
+                                <% if (option.is_correct) { %>
+                                    <span class="uk-label uk-label-success">Correct</span>
+                                <% } else { %>
+                                    <span class="uk-label uk-label-danger">Not Correct</span>
+                                <% } %>
+                            </div>
+                            <div class="">
+                                <form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/options/<%= option.id %>/delete">
+                                    <button class="uk-button uk-button-danger" type="submit">Delete option</button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="uk-margin-right">
-                            <% if (option.is_correct) { %>
-                                <span class="uk-label uk-label-success">Correct</span>
-                            <% } else { %>
-                                <span class="uk-label uk-label-danger">Not Correct</span>
-                            <% } %>
-                        </div>
-                        <div class="">
-                            <form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/options/<%= option.id %>/delete">
-                                <button class="uk-button uk-button-danger" type="submit">Delete option</button>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-            <% }); %>
-        </ul>
-
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/delete">
+                <button class="uk-button uk-button-danger uk-width-1-1 uk-margin-top" type="submit">Delete question</button>
+            </form>
+        <% } %>
     </div>
 </div>

@@ -15,7 +15,7 @@
         <ul class="uk-navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/topics">Topics</a></li>
-            <li><a href="">Quiz</a></li>
+            <li><a href="/quiz">Quiz</a></li>
         </ul>
     </div>
     <div class="uk-navbar-right">

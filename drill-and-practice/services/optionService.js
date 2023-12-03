@@ -35,5 +35,28 @@ const deleteOption = async (optionId) => {
     `;
 };
 
+const getQuestionOptions = async (questionId) => {
+    const res = await sql`
+        SELECT * FROM question_answer_options WHERE question_id = ${questionId}
+    `;
+    return res;
+}
 
-export { addOption, getAllOptions, deleteOption }
+const saveAnswer = async (questionId, optionId, userId) => {
+    await sql`
+        INSERT INTO question_answers (question_id, question_answer_option_id, user_id) VALUES (${questionId}, ${optionId}, ${userId})
+    `;
+};
+
+const checkAnswer = async (questionId, optionId) => {
+    const res = await sql`
+        SELECT * FROM question_answer_options WHERE question_id = ${questionId} AND id = ${optionId} AND is_correct = true
+    `;
+    if (res.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+export { addOption, getAllOptions, deleteOption, getQuestionOptions, saveAnswer, checkAnswer }

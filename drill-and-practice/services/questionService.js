@@ -32,4 +32,18 @@ const getQuestion = async (questionId) => {
     return res[0];
 };
 
-export { addQuestion, getAllQuestions, getQuestion }
+const deleteQuestion = async (questionId) => {
+    await sql`
+        DELETE FROM questions WHERE id = ${questionId}
+    `;
+    // delete also the answers for this question
+    await sql`
+        DELETE FROM question_answers WHERE question_id = ${questionId}
+    `;
+
+    await sql`
+        DELETE FROM question_answer_options WHERE question_id = ${questionId}
+    `;
+};
+
+export { addQuestion, getAllQuestions, getQuestion, deleteQuestion }
