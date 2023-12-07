@@ -60,4 +60,25 @@ const getAnswerCount = async () => {
     return res[0].count;
 };
 
-export { addQuestion, getAllQuestions, getQuestion, deleteQuestion, getQuestionCount, getAnswerCount }
+const getRandomQuestion = async () => {
+    const dbResponse = await sql`
+        SELECT id, question_text FROM questions ORDER BY RANDOM() LIMIT 1
+    `;
+
+    const question = dbResponse[0];
+
+    if (!question) {
+        return {};
+    }
+    const answerOptions = await sql`
+        SELECT id, option_text FROM question_answer_options WHERE question_id = ${question.id}
+    `;
+
+    return {
+        question,
+        answerOptions
+    }
+    
+};
+
+export { addQuestion, getAllQuestions, getQuestion, deleteQuestion, getQuestionCount, getAnswerCount, getRandomQuestion }
