@@ -7,6 +7,34 @@
             Users can create questions and answers for them.
             Other users can then practice answering the questions.
         </p>
-        
+    </div>
+    <div class="uk-card uk-card-default uk-margin">
+        <div class="uk-card-header">
+            <h3 class="uk-card-title">Statistics</h3>
+        </div>
+        <div class="uk-card-body">
+            <table class="uk-table">
+                <thead>
+                    <tr>
+                        <th>Stat</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total number of topics</td>
+                        <td><%= it.topicCount %></td>
+                    </tr>
+                    <tr>
+                        <td>Total number of questions</td>
+                        <td><%= it.questionCount %></td>
+                    </tr>
+                    <tr>
+                        <td>Number of answers</td>
+                        <td><%= it.answerCount %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

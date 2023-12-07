@@ -9,11 +9,13 @@ import * as quizController from "./controllers/quizController.js";
 const router = new Router();
 
 router.get("/", mainController.showMain);
+
 router.get("/auth/login", authController.showLoginForm);
 router.post("/auth/login", authController.postLoginForm);
 router.get("/auth/register", authController.showRegistrationForm);
 router.post("/auth/register", authController.postRegistrationForm);
 router.get("/auth/logout", authController.logout);
+
 router.get("/topics", topicController.showTopics);
 router.post("/topics", topicController.postNewTopic);
 router.get("/topics/:id", topicController.showTopic);
@@ -23,6 +25,7 @@ router.get("/topics/:id/questions/:qId", questionController.showQuestion);
 router.post("/topics/:id/questions/:qId/options", optionController.postNewOption);
 router.post("/topics/:id/questions/:qId/options/:oId/delete", optionController.removeOption);
 router.post("/topics/:id/questions/:qId/delete", questionController.removeQuestion);
+
 router.get("/quiz", quizController.showQuizPage);
 router.get("/quiz/:tId", quizController.selectRandomQuestion);
 router.get("/quiz/:tId/questions/:qId", quizController.showQuizQuestion);

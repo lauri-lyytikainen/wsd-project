@@ -43,7 +43,7 @@
                         </div>
                         <% if(it.isAdmin) { %>
                             <div class="">
-                                <form method="POST" action="/topics/<%= topic.id %>">
+                                <form method="POST" action="/topics/<%= topic.id %>/delete">
                                     <div class="">
                                         <button class="uk-button uk-button-danger uk-width-1-1" type="submit">Delete</button>
                                     </div>

@@ -46,4 +46,18 @@ const deleteQuestion = async (questionId) => {
     `;
 };
 
-export { addQuestion, getAllQuestions, getQuestion, deleteQuestion }
+const getQuestionCount = async () => {
+    const res = await sql`
+        SELECT COUNT(*) FROM questions
+    `;
+    return res[0].count;
+};
+
+const getAnswerCount = async () => {
+    const res = await sql`
+        SELECT COUNT(*) FROM question_answers
+    `;
+    return res[0].count;
+};
+
+export { addQuestion, getAllQuestions, getQuestion, deleteQuestion, getQuestionCount, getAnswerCount }
