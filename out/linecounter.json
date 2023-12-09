@@ -1,0 +1,328 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\brook\\Desktop\\wsd-project",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2023-12-09 14:24:11",
+            "filesum": 44,
+            "codesum": 1182,
+            "commentsum": 17,
+            "blanksum": 229,
+            "statistics": {
+                ".env": {
+                    "code": 9,
+                    "comment": 1,
+                    "blank": 2
+                },
+                "": {
+                    "code": 14,
+                    "comment": 0,
+                    "blank": 10
+                },
+                ".js": {
+                    "code": 712,
+                    "comment": 16,
+                    "blank": 192
+                },
+                ".yml": {
+                    "code": 39,
+                    "comment": 0,
+                    "blank": 4
+                },
+                ".md": {
+                    "code": 5,
+                    "comment": 0,
+                    "blank": 2
+                },
+                ".txt": {
+                    "code": 3,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".eta": {
+                    "code": 358,
+                    "comment": 0,
+                    "blank": 11
+                },
+                ".sql": {
+                    "code": 34,
+                    "comment": 0,
+                    "blank": 8
+                },
+                ".json": {
+                    "code": 8,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 4,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "docker-compose.yml"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\app-launch.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\app.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\config\\readme.txt"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\database\\database.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\deps.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\Dockerfile"
+                },
+                {
+                    "blank": 3,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\middlewares\\authMiddleware.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\middlewares\\errorMiddleware.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\middlewares\\renderMiddleware.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\middlewares\\serveStaticMiddleware.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\middlewares\\userMiddleware.js"
+                },
+                {
+                    "blank": 12,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\routes\\apis\\apiController.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 58,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\routes\\controllers\\authController.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\routes\\controllers\\mainController.js"
+                },
+                {
+                    "blank": 12,
+                    "code": 46,
+                    "comment": 1,
+                    "filename": "drill-and-practice\\routes\\controllers\\optionController.js"
+                },
+                {
+                    "blank": 16,
+                    "code": 65,
+                    "comment": 1,
+                    "filename": "drill-and-practice\\routes\\controllers\\questionController.js"
+                },
+                {
+                    "blank": 21,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\routes\\controllers\\quizController.js"
+                },
+                {
+                    "blank": 22,
+                    "code": 67,
+                    "comment": 6,
+                    "filename": "drill-and-practice\\routes\\controllers\\topicController.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\routes\\routes.js"
+                },
+                {
+                    "blank": 10,
+                    "code": 51,
+                    "comment": 1,
+                    "filename": "drill-and-practice\\services\\optionService.js"
+                },
+                {
+                    "blank": 16,
+                    "code": 67,
+                    "comment": 1,
+                    "filename": "drill-and-practice\\services\\questionService.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 54,
+                    "comment": 6,
+                    "filename": "drill-and-practice\\services\\topicService.js"
+                },
+                {
+                    "blank": 17,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\services\\userService.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\static\\readme.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\tests\\readme.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\answer.eta"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\layouts\\layout.eta"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\login.eta"
+                },
+                {
+                    "blank": 0,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\main.eta"
+                },
+                {
+                    "blank": 0,
+                    "code": 64,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\question.eta"
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\quiz.eta"
+                },
+                {
+                    "blank": 0,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\quizQuestion.eta"
+                },
+                {
+                    "blank": 1,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\register.eta"
+                },
+                {
+                    "blank": 3,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\topic.eta"
+                },
+                {
+                    "blank": 4,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "drill-and-practice\\views\\topics.eta"
+                },
+                {
+                    "blank": 4,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "e2e-playwright\\Dockerfile"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "e2e-playwright\\package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "e2e-playwright\\playwright.config.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "e2e-playwright\\tests\\hello-world.spec.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "flyway\\sql\\V1___initial_schema.sql"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 1,
+                    "filename": "project.env"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "README.md"
+                }
+            ]
+        }
+    ]
+}

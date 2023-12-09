@@ -1,0 +1,69 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2023-12-09 14:24:11
+count workspace : c:\Users\brook\Desktop\wsd-project
+total files : 44
+total code lines : 1182
+total comment lines : 17
+total blank lines : 229
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |           .env|              9|              1|              2|   0.76|
+   |               |             14|              0|             10|    1.2|
+   |            .js|            712|             16|            192|     60|
+   |           .yml|             39|              0|              4|    3.3|
+   |            .md|              5|              0|              2|   0.42|
+   |           .txt|              3|              0|              0|   0.25|
+   |           .eta|            358|              0|             11|     30|
+   |           .sql|             34|              0|              8|    2.9|
+   |          .json|              8|              0|              0|   0.68|
+   -------------------------------------------------------------------------
+.gitignore, code is 2, comment is 0, blank is 0.
+docker-compose.yml, code is 39, comment is 0, blank is 4.
+drill-and-practice\app-launch.js, code is 2, comment is 0, blank is 1.
+drill-and-practice\app.js, code is 17, comment is 0, blank is 3.
+drill-and-practice\config\readme.txt, code is 1, comment is 0, blank is 0.
+drill-and-practice\database\database.js, code is 8, comment is 0, blank is 2.
+drill-and-practice\deps.js, code is 11, comment is 0, blank is 0.
+drill-and-practice\Dockerfile, code is 7, comment is 0, blank is 6.
+drill-and-practice\middlewares\authMiddleware.js, code is 15, comment is 0, blank is 3.
+drill-and-practice\middlewares\errorMiddleware.js, code is 8, comment is 0, blank is 1.
+drill-and-practice\middlewares\renderMiddleware.js, code is 18, comment is 0, blank is 6.
+drill-and-practice\middlewares\serveStaticMiddleware.js, code is 12, comment is 0, blank is 3.
+drill-and-practice\middlewares\userMiddleware.js, code is 9, comment is 0, blank is 4.
+drill-and-practice\routes\apis\apiController.js, code is 45, comment is 0, blank is 12.
+drill-and-practice\routes\controllers\authController.js, code is 58, comment is 0, blank is 15.
+drill-and-practice\routes\controllers\mainController.js, code is 12, comment is 0, blank is 4.
+drill-and-practice\routes\controllers\optionController.js, code is 46, comment is 1, blank is 12.
+drill-and-practice\routes\controllers\questionController.js, code is 65, comment is 1, blank is 16.
+drill-and-practice\routes\controllers\quizController.js, code is 56, comment is 0, blank is 21.
+drill-and-practice\routes\controllers\topicController.js, code is 67, comment is 6, blank is 22.
+drill-and-practice\routes\routes.js, code is 32, comment is 0, blank is 7.
+drill-and-practice\services\optionService.js, code is 51, comment is 1, blank is 10.
+drill-and-practice\services\questionService.js, code is 67, comment is 1, blank is 16.
+drill-and-practice\services\topicService.js, code is 54, comment is 6, blank is 15.
+drill-and-practice\services\userService.js, code is 37, comment is 0, blank is 17.
+drill-and-practice\static\readme.txt, code is 1, comment is 0, blank is 0.
+drill-and-practice\tests\readme.txt, code is 1, comment is 0, blank is 0.
+drill-and-practice\views\answer.eta, code is 13, comment is 0, blank is 0.
+drill-and-practice\views\layouts\layout.eta, code is 37, comment is 0, blank is 1.
+drill-and-practice\views\login.eta, code is 29, comment is 0, blank is 2.
+drill-and-practice\views\main.eta, code is 40, comment is 0, blank is 0.
+drill-and-practice\views\question.eta, code is 64, comment is 0, blank is 0.
+drill-and-practice\views\quiz.eta, code is 17, comment is 0, blank is 0.
+drill-and-practice\views\quizQuestion.eta, code is 33, comment is 0, blank is 0.
+drill-and-practice\views\register.eta, code is 30, comment is 0, blank is 1.
+drill-and-practice\views\topic.eta, code is 41, comment is 0, blank is 3.
+drill-and-practice\views\topics.eta, code is 54, comment is 0, blank is 4.
+e2e-playwright\Dockerfile, code is 5, comment is 0, blank is 4.
+e2e-playwright\package.json, code is 8, comment is 0, blank is 0.
+e2e-playwright\playwright.config.js, code is 19, comment is 0, blank is 0.
+e2e-playwright\tests\hello-world.spec.js, code is 3, comment is 0, blank is 2.
+flyway\sql\V1___initial_schema.sql, code is 34, comment is 0, blank is 8.
+project.env, code is 9, comment is 1, blank is 2.
+README.md, code is 5, comment is 0, blank is 2.
+===============================================================================
