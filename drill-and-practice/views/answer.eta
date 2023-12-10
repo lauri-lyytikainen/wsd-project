@@ -8,6 +8,6 @@
             <p>Incorrect!</p>
             <p>The correct answer was <%= it.correctAnswer %></p>
         <% } %>
-        <a href="/quiz/<%= it.topicId %>" class="uk-button uk-button-primary">Next Question</a>
+        <a href="/quiz/<%= it.topicId %>" class="uk-button uk-button-primary">Next question</a>
     </div>
 </div>
