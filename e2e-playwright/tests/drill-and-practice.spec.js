@@ -28,7 +28,7 @@ test("Topic and Quiz pages can be accesseed while logged in", async ({ page }) =
     await page.getByPlaceholder("Email").fill("admin@admin.com");
     await page.getByPlaceholder("Password").fill("123456");
     await page.click("button:has-text('Login')");
-    await expect(page).toHaveTitle("Drill and Practice");
+    await expect(page).toHaveTitle("Topics");
     
     // Check that we can now access the topic and quiz pages
     await page.goto("/topics");
@@ -56,7 +56,7 @@ test("Registering a new user works", async ({ page }) => {
     await page.getByPlaceholder("Email").fill(email);
     await page.getByPlaceholder("Password").fill(password);
     await page.click("button:has-text('Login')");
-    await expect(page).toHaveTitle("Drill and Practice");
+    await expect(page).toHaveTitle("Topics");
     await expect(page.getByRole("link", { name: email })).toBeVisible();
 });
 
@@ -66,7 +66,7 @@ test("Logging out works", async ({ page }) => {
     await page.getByPlaceholder("Email").fill("admin@admin.com");
     await page.getByPlaceholder("Password").fill("123456");
     await page.click("button:has-text('Login')");
-    await expect(page).toHaveTitle("Drill and Practice");
+    await expect(page).toHaveTitle("Topics");
     await expect(page.getByRole("link", { name: "admin@admin.com" })).toBeVisible();
     await page.getByText("Logout").click();
     await expect(page.getByRole("link", { name: "Login" })).toBeVisible();
