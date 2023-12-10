@@ -1,11 +1,14 @@
 import { configure, renderFile } from "../deps.js";
 
-configure({
-  views: `${Deno.cwd()}/views/`,
-});
+
 
 const renderMiddleware = async (context, next) => {
   context.render = async (file, data) => {
+
+    configure({
+      views: `${Deno.cwd()}/views/`,
+    });
+    
     if (!data) {
       data = {};
     }
